@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <!-- header start -->
+    <header class="nav-container">
+      <nav>
+        <!-- <div>Project List</div> //still questionable--> 
+        <div class="logo">
+          <img src="./asset/images/logo-light-sm.webp" alt="icon-img" />
+        </div>
+        <div class="btn-dismiss btn-contact">  
+          <button id="modal-btn">Get in touch!</button>
+        </div>
+      </nav>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main>
+      <!-- main content start -->
+      <div id="content">
+        <!-- section personal information start -->
+        <section id="personal-card">
+          <h1 class="white-text">Hello there!</h1>
+          <article class="pun-container">
+            <p class="white-text">I am a Strategy and Policy Analyst. Spesialization in System Dynamics Modeller. My goals is to be professional software engineer. </p>
+            <time class="white-text" datetime="">Today</time>
+          </article>
+          <p class="pun white-text">
+            Click me for some jokes!
+          </p>
+        </section>
+        <!-- section personal information end -->
+        <!-- portofolio start -->
+        <section>
+          <img src="" alt="" />
+          <div>
+            <h2>My Project</h2>
+            <img src="" alt="" />
+          </div>
+          <!-- section carousel start -->
+          <div></div>
+          <!-- ection carousel end -->
+          <form action="#">
+            <label for="subcribe-mail">
+              <p>email:</p>
+              <input id="subcribe-mail" type="text" placeholder="xxx@mai.com" />
+            </label>
+          </form>
+        </section>
+        <!-- portofolio end -->
+      </div>
+      <!-- main content end -->
+      <!-- side content start -->
+      <aside></aside>
+      <!-- side content end -->
+    </main>
+    <!-- main end -->
+    <!-- form modal start -->
+    <div id="card-form-modal">
+      <div
+        id="form-modal"
+        class="pop-up modal flex-col-10 flex-align-c center"
+        autocomplete="off"
+      >
+        <!-- form modal header start -->
+        <header class="flex-col-10">
+          <button id="close-btn">&times;</button>
+          <div class="flex-align-c">
+            <h2>Let's set the time!</h2>
+            <img
+              class="img-appoinment"
+              src="./asset/images/appointment-booking-with-calendar_52683-39831.webp"
+              alt="appoiment-image"
+            />
+          </div>
+        </header>
+        <!-- modal header end -->
+        <div class="modal-content">
+          <form action="#" class="container-form flex-col-10">
+            <label for="name">Name <span class="required">*</span></label>
+            <input class="input" id="name" type="text" required />
+            <label for="email">Email <span class="required">*</label>
+            <input class="input" id="email" type="email" required />
+            <label for="time">Time <span class="required">*</label>
+            <input class="input" id="time" type="datetime-local" required />
+            <label for="brief-meet" class="label-hide">Short brief <span class="required">*</label>
+            <textarea
+              class="input"
+              name="brief-meet"
+              id="brief-meet"
+              cols="30"
+              rows="10"
+              placeholder="Tell me what can I help you."
+              required
+            ></textarea>
+          </form>
+        </div>
+        <div class="btn-dismiss">
+          <input type="submit" name="submit" id="submit" value="Submit" />
+        </div>
+      </div>
+    </div>
+    <!-- form modal end -->
+
+    <!-- confirm modal start -->
+    <div class="pop-up center">
+      <div class="icon icon-border-green">
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="title">
+        <h1>Success!!</h1>
+      </div>
+      <div class="description">
+        <p>
+          Thank you for contacting me. We will meet online using the following
+          link <a href="#">Google meet</a> at :
+        </p>
+        <br />
+        <p class="confirm-text">Date : <span id="current-date"></span></p>
+        <p class="confirm-text">Time : <span id="current-time"></span></p>
+      </div>
+      <div class="btn-dismiss">
+        <button id="dismiss-popup">Dismiss</button>
+      </div>
+    </div>
+    <!-- confirm modal end -->
+
+    <!-- failed modal start -->
+    <div class="pop-up center">
+      <div class="icon icon-border-red">
+        <i class="fa fa-times"></i>
+      </div>
+      <div class="title">
+        <h1>Failed!!</h1>
+      </div>
+      <div class="description">
+        <p>Please fill the required fields!</p>
+      </div>
+      <div class="btn-dismiss">
+        <button id="dismiss-failed">Dismiss</button>
+      </div>
+    </div>
+    <!-- failed modal end -->
+
+    <!-- footer start -->
+    <footer>
+      <p>@2023 Muhammad Adrisa NS</p>
+    </footer>
+    <!-- footer end -->
+
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
