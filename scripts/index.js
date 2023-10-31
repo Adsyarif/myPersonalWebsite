@@ -53,9 +53,17 @@ const countInput = () => {
       userInput.push(inputForm[i].value);
     }
   }
+  getClientName(userInput[0]);
+  getClientEmail(userInput[1]);
   printDateTime(userInput[2]);
 };
 
+const getClientEmail = (clientEmail) => {
+  document.getElementById("client-email").innerHTML = clientEmail;
+};
+const getClientName = (clientName) => {
+  document.getElementById("client-name").innerHTML = clientName;
+};
 const printDateTime = (inputDateTime) => {
   let timeAppointment = inputDateTime;
 

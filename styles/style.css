@@ -8,6 +8,7 @@
 }
 body {
   font-family: default-raleway;
+  height: 100vh;
 }
 .flex-justify-c {
   justify-content: center;
@@ -49,7 +50,9 @@ nav {
 .nav-container {
   padding: 10px 100px;
 }
-
+.btn-dismiss #modal-btn {
+  transition: none;
+}
 .btn-dismiss button:hover {
   color: #111;
   background-color: #f5f5f5;
@@ -257,7 +260,9 @@ nav {
 }
 
 .input {
-  padding: 5px 5px;
+  padding: 8px 8px;
+  border: 2px solid #646363;
+  border-radius: 10px;
 }
 
 .description p:first-child {
@@ -275,4 +280,25 @@ nav {
   font-weight: bold;
   color: rgb(71, 114, 255);
 }
+
+#client-email,
+#client-name {
+  font-weight: bold;
+}
 /* ******MODAL END****** */
+
+aside {
+  /* height: 100vh; */
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+}
+
+.info-card {
+  width: 600px;
+  background-color: tomato;
+  height: 400px;
+}
