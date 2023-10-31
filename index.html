@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Profile</title>
   </head>
+
   <body>
     <!-- header start -->
-    <header class="nav-container">
+    <header class="nav-container container">
       <nav>
         <!-- <div>Project List</div> //still questionable--> 
         <div class="logo">
@@ -25,51 +26,112 @@
       </nav>
     </header>
     <!-- header end -->
-    <!-- main start -->
-    <main>
-      <!-- main content start -->
-      <div id="content">
-        <!-- section personal information start -->
-        <section id="personal-card">
-          <h1 class="white-text">Hello there!</h1>
-          <article class="pun-container">
-            <p class="white-text">I am a Strategy and Policy Analyst. Spesialization in System Dynamics Modeller. My goals is to be professional software engineer. </p>
-            <time class="white-text" datetime="">Today</time>
-          </article>
-          <p class="pun white-text">
-            Click me for some jokes!
-          </p>
-        </section>
-        <!-- section personal information end -->
+    <div class="main-content">
+      <!-- main start -->
+      <main class="container">
+          <!-- section personal information start -->
+          <section id="content" class="personal-container card">
+            <!-- <div id="personal-card"> -->
+              <h1 class="white-text">Hello there!</h1>
+              <article class="greeting-container">
+                <p class="white-text">I am a Strategy and Policy Analyst. Spesialization in System Dynamics Modeller. My goals is to be King of the Pirates. </p>
+                <time id="today" class="white-text" datetime="">Today</time>
+              </article>
+              <hr>
+              <p class="pun white-text">
+                Click me for some jokes!
+              </p>
+            <!-- </div> -->
+          </section>
+          <!-- section personal information end --> 
+
+          <!-- section social media start -->
+          <section class="info-card-1 card">     
+            <div class="card-icon">
+              <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
+            </div>
+            <div>
+              <h2>Social Media</h2>
+            </div>
+            <div class="social-media">
+
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" width="50px" />
+                  <figcaption>Twitter</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" width="50px"/>
+                  <figcaption>Facebook</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" width="50px"/>
+                  <figcaption>Istagram</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo">
+                  <figcaption>LinkedIn</figcaption>
+                </figure>
+
+            </div>
+          </section>
+          <!-- section social media end -->
+
+          <section class="info-card-1 card">
+            
+            <div class="card-icon">
+              <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
+            </div>
+            <div>
+              <h2>Social Media</h2>
+            </div>
+            <div class="social-media">
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" />
+                  <figcaption>Twitter</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" />
+                  <figcaption>Facebook</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" />
+                  <figcaption>Istagram</figcaption>
+                </figure>
+                <figure>
+                  <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo" />
+                  <figcaption>LinkedIn</figcaption>
+                </figure>
+            </div>
+          </section>
+      </main>
+      <!-- main end -->
+      <!-- side content start -->
+      <aside class="container">
         <!-- portofolio start -->
-        <section>
-          <img src="" alt="" />
-          <div>
+        <section class="card protofolio">
             <h2>My Project</h2>
-            <img src="" alt="" />
-          </div>
-          <!-- section carousel start -->
-          <div></div>
-          <!-- ection carousel end -->
-          <form action="#">
-            <label for="subcribe-mail">
-              <p>email:</p>
-              <input id="subcribe-mail" type="text" placeholder="xxx@mai.com" />
-            </label>
-          </form>
+            <!-- section carousel start -->
+            <div class="carousel">
+              <h1>Smile to everyone</h1>
+              <img class="img-project" src="./asset/images/How-to-Get-a-Job-Where-You-Used-to-Work.webp" alt="best=project"/>
+            </div>
+            <!-- ection carousel end -->
+            <form action="#">
+              <label for="subcribe-mail">
+                <p>email:</p>
+                <input id="subcribe-mail" type="text" placeholder="xxx@mai.com" />
+              </label>
+            </form>
+        </section>
+
+        <section>
+          <img class="img-demo" src="https://asset.kompas.com/crops/FcQXG_q1NROufT8BUNaFqqIF4dg=/0x0:1440x960/780x390/data/photo/2022/07/12/62cd5bc2b79f4.png" alt="demo-image">
         </section>
         <!-- portofolio end -->
-      </div>
-      <!-- main content end -->
-      <!-- side content start -->
-      <aside>
-        <div class="info-card">
-
-        </div>
       </aside>
       <!-- side content end -->
-    </main>
-    <!-- main end -->
+    </div>
+
     <!-- form modal start -->
     <div id="card-form-modal">
       <div
@@ -93,9 +155,9 @@
         <div class="modal-content">
           <form action="#" class="container-form flex-col-10">
             <label for="name">Name <span class="required">*</span></label>
-            <input class="input" id="name" type="text" required />
+            <input class="input" id="name" type="text" required placeholder="Input your name."/>
             <label for="email">Email <span class="required">*</label>
-            <input class="input" id="email" type="email" required />
+            <input class="input" id="email" type="email" required placeholder="Input your email."/>
             <label for="time">Time <span class="required">*</label>
             <input class="input" id="time" type="datetime-local" required />
             <label for="brief-meet" class="label-hide">Short brief <span class="required">*</label>
@@ -158,7 +220,7 @@
     <!-- failed modal end -->
 
     <!-- footer start -->
-    <footer>
+    <footer class="container">
       <p>@2023 Muhammad Adrisa NS</p>
     </footer>
     <!-- footer end -->

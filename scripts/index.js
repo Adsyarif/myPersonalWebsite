@@ -7,6 +7,9 @@ let thirdModal = document.getElementsByClassName("pop-up")[2];
 let modalBackGround = document.getElementById("card-form-modal");
 let inputForm = document.querySelectorAll(".input");
 let userInput = [];
+const timeElapsed = Date.now();
+const todayDate = new Date(timeElapsed);
+document.getElementById("today").innerHTML = todayDate.toDateString();
 
 document.getElementById("modal-btn").addEventListener("click", () => {
   firstModal.classList.remove("hidden");
@@ -35,6 +38,7 @@ document.getElementById("dismiss-popup").addEventListener("click", () => {
 
 punAtribut.addEventListener("click", () => {
   punGenerator();
+  punOnClick();
 });
 
 const checkedInput = () => {
@@ -85,4 +89,11 @@ const punGenerator = () => {
   let randomNumber = Math.ceil(Math.random() * data.length);
   punAtribut.innerHTML = '"' + data[randomNumber].Pun + '"';
   console.log(data[randomNumber].Pun);
+};
+
+const punOnClick = () => {
+  punAtribut.classList.add("animated-pun");
+  setTimeout(() => {
+    punAtribut.classList.remove("animated-pun");
+  }, 600);
 };
