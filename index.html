@@ -9,13 +9,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/responsive-0-414.css">
     <title>Profile</title>
   </head>
 
   <body>
     <!-- header start -->
     <header class="nav-container container">
-      <nav>
         <!-- <div>Project List</div> //still questionable--> 
         <div class="logo">
           <img src="./asset/images/logo-light-sm.webp" alt="icon-img" />
@@ -23,114 +23,129 @@
         <div class="btn-dismiss btn-contact">  
           <button id="modal-btn">Get in touch!</button>
         </div>
-      </nav>
     </header>
     <!-- header end -->
-    <div class="main-content">
-      <!-- main start -->
-      <main class="container">
-          <!-- section personal information start -->
-          <section id="content" class="personal-container card">
-            <!-- <div id="personal-card"> -->
-              <h1 class="white-text">Hello there!</h1>
-              <article class="greeting-container">
-                <p class="white-text">I am a Strategy and Policy Analyst. Spesialization in System Dynamics Modeller. My goals is to be King of the Pirates. </p>
-                <time id="today" class="white-text" datetime="">Today</time>
-              </article>
-              <hr>
-              <p class="pun white-text">
-                Click me for some jokes!
-              </p>
-            <!-- </div> -->
-          </section>
-          <!-- section personal information end --> 
+    <!-- main start -->
+    <main class="main-content container">
+      <!-- section personal information start -->
+      <section id="content" class="personal-container card personal-grid">
+        <!-- <div id="personal-card"> -->
+          <h1 class="white-text">Hello there!</h1>
+          <article class="greeting-container">
+            <p class="white-text">I am a Strategy and Policy Analyst. Spesialization in System Dynamics Modeller. My goals is to be King of the Pirates. </p>
+            <time id="today" class="white-text" datetime="">Today</time>
+          </article>
+          <hr>
+          <p class="pun white-text">
+            Click me for some jokes!
+          </p>
+        <!-- </div> -->
+      </section>
+      <!-- section personal information end --> 
 
-          <!-- section social media start -->
-          <section class="info-card-1 card">     
-            <div class="card-icon">
-              <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
-            </div>
-            <div>
-              <h2>Social Media</h2>
-            </div>
-            <div class="social-media">
+      <!-- section social media start -->
+      <section class="info-card-1 card info-card-1-grid" >     
+        <div class="card-icon">
+          <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
+        </div>
+        <div>
+          <h2>Social Media</h2>
+        </div>
+        <div class="social-media">
 
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" width="50px" />
-                  <figcaption>Twitter</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" width="50px"/>
-                  <figcaption>Facebook</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" width="50px"/>
-                  <figcaption>Istagram</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo">
-                  <figcaption>LinkedIn</figcaption>
-                </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" width="50px" />
+              <figcaption>Twitter</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" width="50px"/>
+              <figcaption>Facebook</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" width="50px"/>
+              <figcaption>Istagram</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo">
+              <figcaption>LinkedIn</figcaption>
+            </figure>
 
-            </div>
-          </section>
-          <!-- section social media end -->
+        </div>
+      </section>
+      <!-- section social media end -->
 
-          <section class="info-card-1 card">
-            
-            <div class="card-icon">
-              <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
-            </div>
-            <div>
-              <h2>Social Media</h2>
-            </div>
-            <div class="social-media">
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" />
-                  <figcaption>Twitter</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" />
-                  <figcaption>Facebook</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" />
-                  <figcaption>Istagram</figcaption>
-                </figure>
-                <figure>
-                  <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo" />
-                  <figcaption>LinkedIn</figcaption>
-                </figure>
-            </div>
-          </section>
-      </main>
-      <!-- main end -->
-      <!-- side content start -->
-      <aside class="container">
-        <!-- portofolio start -->
-        <section class="card protofolio">
-            <h2>My Project</h2>
-            <!-- section carousel start -->
-            <div class="carousel">
-              <h1>Smile to everyone</h1>
-              <img class="img-project" src="./asset/images/How-to-Get-a-Job-Where-You-Used-to-Work.webp" alt="best=project"/>
-            </div>
-            <!-- ection carousel end -->
-            <form action="#">
-              <label for="subcribe-mail">
-                <p>email:</p>
-                <input id="subcribe-mail" type="text" placeholder="xxx@mai.com" />
-              </label>
-            </form>
-        </section>
+      <section class="info-card-1 card info-card-2-grid">
+        
+        <div class="card-icon">
+          <img src="./asset/images/logo-light-sm.webp" alt="profile-social">
+        </div>
+        <div>
+          <h2>Social Media</h2>
+        </div>
+        <div class="social-media">
+            <figure>
+              <img class="social-media-icon" src="./asset/images/twitter-light.png" alt="twitter-logo" />
+              <figcaption>Twitter</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/facebook-light.png" alt="facebook-logo" />
+              <figcaption>Facebook</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/instagram-light.png" alt="instagra-logo" />
+              <figcaption>Istagram</figcaption>
+            </figure>
+            <figure>
+              <img class="social-media-icon" src="./asset/images/linkedin-light.png" alt="linkedin-logo" />
+              <figcaption>LinkedIn</figcaption>
+            </figure>
+        </div>
+      </section>
+    
+      
+      <!-- portofolio start -->
+      <section class="card protofolio protofolio-grid">
+          <h2>My Project</h2>
+          <!-- section carousel start -->
+          <div class="carousel">
+            <h1>Smile to everyone</h1>
+            <!-- <img class="img-project" src="./asset/images/How-to-Get-a-Job-Where-You-Used-to-Work.webp" alt="best=project"/> -->
+          </div>
+          <!-- Section carousel end -->
+          <form action="#">
+            <label for="subcribe-mail">
+              <p>email:</p>
+              <input id="subcribe-mail" type="text" placeholder="xxx@mai.com" />
+            </label>
+          </form>
+      </section>
+      <!-- portofolio end -->
+      <!-- image dump start -->
+      <section class="image-dump-grid image-dump">
+        <div id="img-1">
+          1
+        </div>
+        <div id="img-2">
+          2
+        </div>
+        <div id="img-3">
+          3
+        </div>
+        <div id="img-4">
+          4
+        </div>
+        <div id="img-5">
+          5
+        </div>
+        <div id="img-6">
+          6
+        </div>
+      </section>
+      <!-- image dump end -->
 
-        <section>
-          <img class="img-demo" src="https://asset.kompas.com/crops/FcQXG_q1NROufT8BUNaFqqIF4dg=/0x0:1440x960/780x390/data/photo/2022/07/12/62cd5bc2b79f4.png" alt="demo-image">
-        </section>
-        <!-- portofolio end -->
-      </aside>
-      <!-- side content end -->
-    </div>
+    </main>
+    <!-- main end -->
+    
 
     <!-- form modal start -->
     <div id="card-form-modal">
