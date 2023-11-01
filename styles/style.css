@@ -40,12 +40,31 @@ textarea {
 }
 
 /* ******NAVBAR START****** */
-
 .themes-togle-day {
   background-color: #2926266b;
 }
 .sun-config-day {
   color: black;
+
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .moon-config-day {
@@ -61,7 +80,9 @@ textarea {
   border: none;
   border-color: transparent;
   background-color: transparent;
+  cursor: pointer;
 }
+
 .themes-togle-config {
   border: 0px solid transparent;
   border-radius: 20px;
@@ -96,7 +117,6 @@ textarea {
   padding: 0px;
   border: none;
   background-color: transparent;
-  cursor: pointer;
 }
 .btn-util {
   display: flex;

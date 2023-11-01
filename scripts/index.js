@@ -69,11 +69,13 @@ document.getElementById("btn-themes-night").addEventListener("click", () => {
 });
 
 const checkedInput = () => {
-  if (inputForm.length === userInput.length) {
+  if (inputForm.length == userInput.length) {
     firstModal.classList.add("hidden");
     secondModal.classList.add("active");
   } else {
     thirdModal.classList.add("active");
+    console.log("req input : " + inputForm.length);
+    console.log("user input : " + userInput.length);
   }
 };
 
