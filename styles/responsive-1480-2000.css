@@ -1,4 +1,4 @@
-@media screen and (min-width: 1160px) and (max-width: 1700px) {
+@media screen and (min-width: 1480px) and (max-width: 2000px) {
   .image-dump-grid {
     grid-area: 2/2/3/-1;
     justify-self: center;
@@ -47,6 +47,6 @@
     background-color: #646363;
     width: 150px;
     height: 100px;
-    grid-area: 5/4/6/5;
+    grid-area: 4/4/5/5;
   }
 }
