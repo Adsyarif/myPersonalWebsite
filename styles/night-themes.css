@@ -1,0 +1,19 @@
+/* togle start */
+
+.themes-togle-night {
+  background-color: #f5f5f5;
+}
+
+.sun-config-night {
+  color: #2926266b;
+}
+
+.moon-config-night {
+  color: black;
+}
+
+.themes-day-night {
+  background-color: #2926266b;
+}
+
+/* togle end */
