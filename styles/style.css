@@ -440,12 +440,11 @@ main {
 }
 
 .protofolio {
-  /* max-width: 650px;
-  min-width: 300px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
+  overflow: hidden;
   /* align-items: center; */
 }
 
