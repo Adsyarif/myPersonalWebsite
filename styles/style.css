@@ -3,11 +3,21 @@
   margin: 0;
 }
 @font-face {
-  font-family: default-raleway;
+  font-family: font-lumayan-lah;
   src: url("./../asset/font/Raleway-VariableFont_wght.ttf");
+  font-weight: bold;
 }
+@font-face {
+  font-family: font-kojo;
+  src: url("./../asset/font/Quicksand-VariableFont_wght.ttf");
+}
+
+h2 {
+  font-family: font-kojo;
+}
+
 body {
-  font-family: default-raleway;
+  font-family: font-lumayan-lah;
   /* max-height: 100vh; */
 }
 
@@ -453,9 +463,9 @@ main {
   /* max-height: 400px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: white;
-  overflow: hidden;
+  gap: 10px;
   /* align-items: center; */
 }
 
@@ -469,6 +479,58 @@ main {
   min-width: 610px;
   max-width: 990px;
   border-radius: 30px;
+}
+
+.drop-btn {
+  background-color: #343636;
+  color: white;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 300px;
+  bottom: 50px;
+  z-index: 1;
+  border-radius: 20px;
+}
+.dropup-content ul {
+  /* list-style: disc; */
+  list-style: url("./../asset/images/icon-adrisa/favicon-32x32.png");
+  background-color: #f1f1f1;
+  /* background-color: #111; */
+}
+
+.dropup-content li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content a:hover {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+  border-radius: 20px;
+}
+
+.dropup:hover .drop-btn {
+  background-color: #696868;
+  /* color: #111; */
 }
 
 .container {

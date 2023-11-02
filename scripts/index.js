@@ -15,6 +15,9 @@ let btnDay = document.querySelector("#container-day i");
 let btnNight = document.querySelector("#container-night i");
 let containerDay = document.getElementById("container-day");
 
+// status for local storage
+// let takeNight = false;
+
 // select input form atribut
 let inputForm = document.querySelectorAll(".input");
 let userInput = [];
@@ -66,6 +69,8 @@ document.getElementById("button-themes-day").addEventListener("click", () => {
 
 document.getElementById("button-themes-night").addEventListener("click", () => {
   togleButtonNight();
+  // takeNight = true;
+  // locaStorageStatus();
 });
 
 const checkedInput = () => {
@@ -155,3 +160,9 @@ const togleButtonDay = () => {
 
   document.querySelector("body").classList.remove("themes-day-night");
 };
+
+// const locaStorageStatus = () => {
+//   if (takeNight) {
+//     let saveNight = localStorage.setItem("night", "on");
+//   }
+// };
