@@ -575,6 +575,14 @@ main {
   column-gap: 5px;
   /* padding: 20px; */
 }
+.image-dump h2 {
+  color: white;
+}
+.key-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #img-1 {
   background-color: #646363;
