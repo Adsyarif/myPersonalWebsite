@@ -509,6 +509,7 @@ main {
   list-style: url("./../asset/images/icon-adrisa/favicon-32x32.png");
   background-color: #f1f1f1;
   /* background-color: #111; */
+  border-radius: 20px;
 }
 
 .dropup-content li a {
@@ -544,6 +545,7 @@ main {
   grid-template-rows: 0.5fr 1fr;
   gap: 20px;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .personal-grid {

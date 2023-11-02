@@ -91,7 +91,7 @@
   .main-content {
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
+    padding-top: 60px;
   }
 
   .image-dump {
