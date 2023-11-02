@@ -14,7 +14,8 @@ let containerToggle = document.getElementById("container-toggle");
 let btnDay = document.querySelector("#container-day i");
 let btnNight = document.querySelector("#container-night i");
 let containerDay = document.getElementById("container-day");
-
+let changes = false;
+let song = new Audio("./../asset/audio/agito-themes.mp3");
 // status for local storage
 // let takeNight = false;
 
@@ -65,10 +66,16 @@ punAtribut.addEventListener("click", () => {
 
 document.getElementById("button-themes-day").addEventListener("click", () => {
   togleButtonDay();
+  changes = false;
+  changeThemes(changes);
+  backSong(changes);
 });
 
 document.getElementById("button-themes-night").addEventListener("click", () => {
   togleButtonNight();
+  changes = true;
+  changeThemes(changes);
+  backSong(changes);
   // takeNight = true;
   // locaStorageStatus();
 });
@@ -137,13 +144,27 @@ const togleButtonNight = () => {
   btnDay.classList.add("sun-config-night");
   btnNight.classList.add("moon-config-night");
   containerDay.classList.add("themes-day-night");
-  document.querySelector("body").classList.add("themes-day-night");
+  document.querySelector("body").classList.add("themes-night-body");
+  document
+    .getElementById("my-skills-content")
+    .classList.add("bg-content-night");
+  document.getElementById("my-skill-list").classList.add("img-list-night");
+  document.getElementById("footer-content").classList.add("footer-color-night");
+
+  document.querySelector("footer").classList.add("footer-container-night");
 
   containerToggle.classList.remove("themes-togle-day");
   btnDay.classList.remove("sun-config-day");
   btnNight.classList.remove("moon-config-day");
   containerDay.classList.remove("themes-day-day");
-  document.querySelector("body").classList.remove("themes-day-day");
+  document.querySelector("body").classList.remove("themes-day-body");
+  document
+    .getElementById("my-skills-content")
+    .classList.remove("bg-content-day");
+  document.getElementById("my-skill-list").classList.remove("img-list-day");
+  document
+    .getElementById("footer-content")
+    .classList.remove("footer-color-day");
 };
 
 const togleButtonDay = () => {
@@ -151,14 +172,25 @@ const togleButtonDay = () => {
   btnDay.classList.add("sun-config-day");
   btnNight.classList.add("moon-config-day");
   containerDay.classList.add("themes-day-day");
-  document.querySelector("body").classList.add("themes-day-day");
+  document.querySelector("body").classList.add("themes-day-body");
+  document.getElementById("my-skills-content").classList.add("bg-content-day");
+  document.getElementById("my-skill-list").classList.add("img-list-day");
+  document.getElementById("footer-content").classList.add("footer-color-day");
 
   containerToggle.classList.remove("themes-togle-night");
   btnDay.classList.remove("sun-config-night");
   btnNight.classList.remove("moon-config-night");
   containerDay.classList.remove("themes-day-night");
+  document.querySelector("body").classList.remove("themes-night-body");
+  document
+    .getElementById("my-skills-content")
+    .classList.remove("bg-content-night");
+  document.getElementById("my-skill-list").classList.remove("img-list-night");
+  document
+    .getElementById("footer-content")
+    .classList.remove("footer-color-night");
 
-  document.querySelector("body").classList.remove("themes-day-night");
+  document.querySelector("footer").classList.remove("footer-container-night");
 };
 
 // const locaStorageStatus = () => {
@@ -166,3 +198,31 @@ const togleButtonDay = () => {
 //     let saveNight = localStorage.setItem("night", "on");
 //   }
 // };
+
+const changeThemes = (hensin) => {
+  if (hensin) {
+    document
+      .querySelector("picture source")
+      .setAttribute("srcset", "./asset/images/agito-logo-night.webp");
+    document
+      .querySelector(".default-img")
+      .setAttribute("src", "./asset/images/agito-logo-night.webp");
+  } else {
+    document
+      .querySelector("picture source")
+      .setAttribute("srcset", "./asset/images/icon-adrisa/logo-dark-sm.webp");
+    document
+      .querySelector(".default-img")
+      .setAttribute("src", "./asset/images/icon-adrisa/logo-light-sm.webp");
+  }
+};
+
+const backSong = (hensin) => {
+  if (hensin) {
+    song.play();
+    song.volume = 1;
+  } else {
+    song.pause();
+    song.currentTime = 0;
+  }
+};
