@@ -145,26 +145,12 @@ const togleButtonNight = () => {
   btnNight.classList.add("moon-config-night");
   containerDay.classList.add("themes-day-night");
   document.querySelector("body").classList.add("themes-night-body");
-  document
-    .getElementById("my-skills-content")
-    .classList.add("bg-content-night");
-  document.getElementById("my-skill-list").classList.add("img-list-night");
-  document.getElementById("footer-content").classList.add("footer-color-night");
-
-  document.querySelector("footer").classList.add("footer-container-night");
 
   containerToggle.classList.remove("themes-togle-day");
   btnDay.classList.remove("sun-config-day");
   btnNight.classList.remove("moon-config-day");
   containerDay.classList.remove("themes-day-day");
   document.querySelector("body").classList.remove("themes-day-body");
-  document
-    .getElementById("my-skills-content")
-    .classList.remove("bg-content-day");
-  document.getElementById("my-skill-list").classList.remove("img-list-day");
-  document
-    .getElementById("footer-content")
-    .classList.remove("footer-color-day");
 };
 
 const togleButtonDay = () => {
@@ -173,24 +159,12 @@ const togleButtonDay = () => {
   btnNight.classList.add("moon-config-day");
   containerDay.classList.add("themes-day-day");
   document.querySelector("body").classList.add("themes-day-body");
-  document.getElementById("my-skills-content").classList.add("bg-content-day");
-  document.getElementById("my-skill-list").classList.add("img-list-day");
-  document.getElementById("footer-content").classList.add("footer-color-day");
 
   containerToggle.classList.remove("themes-togle-night");
   btnDay.classList.remove("sun-config-night");
   btnNight.classList.remove("moon-config-night");
   containerDay.classList.remove("themes-day-night");
   document.querySelector("body").classList.remove("themes-night-body");
-  document
-    .getElementById("my-skills-content")
-    .classList.remove("bg-content-night");
-  document.getElementById("my-skill-list").classList.remove("img-list-night");
-  document
-    .getElementById("footer-content")
-    .classList.remove("footer-color-night");
-
-  document.querySelector("footer").classList.remove("footer-container-night");
 };
 
 // const locaStorageStatus = () => {
