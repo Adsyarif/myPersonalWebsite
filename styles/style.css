@@ -5,11 +5,11 @@
 @font-face {
   font-family: font-lumayan-lah;
   src: url("./../asset/font/Raleway-VariableFont_wght.ttf");
-  font-weight: bold;
 }
 @font-face {
   font-family: font-kojo;
   src: url("./../asset/font/Quicksand-VariableFont_wght.ttf");
+  font-weight: bold;
 }
 
 h2 {
