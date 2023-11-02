@@ -8,7 +8,7 @@
 }
 body {
   font-family: default-raleway;
-  max-height: 100vh;
+  /* max-height: 100vh; */
 }
 
 .flex-justify-c {
@@ -46,23 +46,11 @@ textarea {
 .sun-config-day {
   color: black;
 
-  -webkit-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
   animation: spin 4s linear infinite;
 }
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
+
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -75,8 +63,8 @@ textarea {
   background-color: #f5f5f5;
 }
 
-#btn-themes-day,
-#btn-themes-night {
+#button-themes-day,
+#button-themes-night {
   border: none;
   border-color: transparent;
   background-color: transparent;
@@ -462,10 +450,10 @@ main {
 }
 
 .protofolio {
-  max-height: 400px;
+  /* max-height: 400px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   background-color: white;
   overflow: hidden;
   /* align-items: center; */
@@ -474,12 +462,6 @@ main {
 .carousel {
   display: flex;
   flex-direction: column;
-}
-
-aside {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
 }
 
 .img-demo {
@@ -497,7 +479,7 @@ aside {
 .main-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 0.5fr, 1fr;
+  grid-template-rows: 0.5fr 1fr;
   gap: 20px;
   padding-bottom: 20px;
 }
@@ -522,53 +504,134 @@ aside {
   align-self: center;
 }
 /* GRID LAYOUT END */
+
 .image-dump {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(4, 100px);
   row-gap: 5px;
   column-gap: 5px;
+  /* padding: 20px; */
 }
 
 #img-1 {
   background-color: #646363;
   width: 150px;
   height: 100px;
-  grid-area: 1/2/2/3;
+  grid-area: 1/2/3/4;
+  justify-self: center;
+  align-items: self-start;
+  /* margin-top: 20px; */
 }
 #img-2 {
   background-color: #646363;
   width: 150px;
   height: 200px;
-  grid-area: 1/5/3/5;
-  justify-self: center;
-  align-self: center;
+  grid-area: 1/4/4/7;
+  justify-self: self-end;
+  align-self: self-start;
 }
 #img-3 {
   background-color: #646363;
   width: 150px;
-  height: 200px;
-  grid-area: 2/1/4/2;
+  height: 170px;
+  grid-area: 2/1/5/3;
+  /* justify-self: center;
+  align-self: center; */
 }
 #img-4 {
   background-color: #646363;
   width: 250px;
-  height: 200px;
-  grid-area: 2/3/4/5;
+  height: 150px;
+  grid-area: 2/2/4/6;
   justify-self: center;
   align-self: center;
+  margin-bottom: 20px;
 }
 #img-5 {
   background-color: #646363;
   width: 250px;
   height: 100px;
-  grid-area: 4/2/4/4;
+  grid-area: 3/2/5/4;
   justify-self: center;
-  align-self: center;
+  align-self: self-end;
 }
 #img-6 {
   background-color: #646363;
   width: 150px;
   height: 100px;
-  grid-area: 5/4/6/5;
+  grid-area: 3/4/5/7;
+  justify-self: self-end;
+  align-self: center;
+}
+
+.animated-grid {
+  /* animation-name: grid-zoom-out; */
+
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+  /* animation-name: grid-zoom-in; */
+}
+.image-shake {
+  padding: 0px;
+}
+.image-shake:hover {
+  animation-name: img-tremor;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  border: 3px solid tomato;
+}
+
+@keyframes img-tremor {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes grid-zoom-out {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes grid-zoom-in {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 200px;
+  }
 }

@@ -60,11 +60,11 @@ punAtribut.addEventListener("click", () => {
   punOnClick();
 });
 
-document.getElementById("btn-themes-day").addEventListener("click", () => {
+document.getElementById("button-themes-day").addEventListener("click", () => {
   togleButtonDay();
 });
 
-document.getElementById("btn-themes-night").addEventListener("click", () => {
+document.getElementById("button-themes-night").addEventListener("click", () => {
   togleButtonNight();
 });
 
