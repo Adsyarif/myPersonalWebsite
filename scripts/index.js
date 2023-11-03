@@ -39,6 +39,8 @@ document.getElementById("today").innerHTML = todayDate.toDateString();
 
 // event pop up form
 document.getElementById("modal-btn").addEventListener("click", () => {
+  start = false;
+  // buttonSound(start)
   firstModal.classList.remove("hidden");
   firstModal.classList.add("active");
   modalBackGround.classList.add("block-content");
@@ -46,12 +48,16 @@ document.getElementById("modal-btn").addEventListener("click", () => {
 
 // event submit form button
 document.getElementById("submit").addEventListener("click", () => {
+  start = false;
+  // buttonSound(start)
   countInput();
   checkedInput();
 });
 
 // close form button
 document.getElementById("close-btn").addEventListener("click", () => {
+  start = true;
+  // buttonSound(start)
   firstModal.classList.remove("active");
   modalBackGround.classList.remove("block-content");
 });
@@ -63,6 +69,7 @@ document.getElementById("dismiss-failed").addEventListener("click", () => {
 
 // success event popup submit form button
 document.getElementById("dismiss-popup").addEventListener("click", () => {
+  start = true;
   secondModal.classList.remove("active");
   modalBackGround.classList.remove("block-content");
 });
@@ -297,13 +304,9 @@ for (let btn = 0; btn < btnTotal; btn++) {
     makeSound(btnPress, start);
   });
 }
+
 addEventListener("keydown", function (e) {
   makeSound(e.key, start);
   buttonAnimation(e.key, start);
   console.log(e);
 });
-
-// document.querySelector(".logo").addEventListener("click", function () {
-//   start = true;
-
-// });
