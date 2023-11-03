@@ -590,6 +590,7 @@ main {
   color: rgb(255, 255, 255);
   font-size: 2rem;
   text-shadow: 2px 2px #000000;
+  border: none;
 }
 
 #img-1 {
@@ -651,13 +652,17 @@ main {
   align-self: center;
 }
 
-.animated-grid {
-  /* animation-name: grid-zoom-in; */
-}
 .image-shake {
   padding: 0px;
 }
 .image-shake:hover {
+  animation-name: img-tremor;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  border: 3px solid tomato;
+}
+
+.pressed {
   animation-name: img-tremor;
   animation-iteration-count: infinite;
   animation-duration: 0.5s;
@@ -697,14 +702,5 @@ main {
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-@keyframes grid-zoom-out {
-  from {
-    right: -400px;
-  }
-  to {
-    right: 0px;
   }
 }

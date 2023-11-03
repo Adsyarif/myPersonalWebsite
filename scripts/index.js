@@ -1,5 +1,5 @@
 import data from "./../puns.json" assert { type: "json" };
-
+let start = true;
 // select pun attribut
 let punAtribut = document.querySelector(".pun");
 
@@ -18,7 +18,7 @@ let changes = false;
 let song = new Audio("./../asset/audio/agito-themes.mp3");
 let characterSide = document.getElementById("character-image");
 // status for local storage
-// let takeNight = false;
+let takeNight = false;
 
 // select input form atribut
 let inputForm = document.querySelectorAll(".input");
@@ -178,11 +178,20 @@ const togleButtonDay = () => {
   document.querySelector("body").classList.remove("themes-night-body");
 };
 
-// const locaStorageStatus = () => {
-//   if (takeNight) {
-//     let saveNight = localStorage.setItem("night", "on");
-//   }
-// };
+const darkMode = localStorage.getItem("darkMode");
+if (darkMode == "on") {
+  takeNight = true;
+  characterSide.classList.add("active-night");
+  togleButtonNight();
+  changes = true;
+  changeThemes(changes);
+  backSong(changes);
+}
+if (takeNight) {
+  locaStorage.setItem("darkMode", "on");
+} else {
+  localStorage.setItem("darkMode", "off");
+}
 
 const changeThemes = (hensin) => {
   if (hensin) {
@@ -212,50 +221,89 @@ const backSong = (hensin) => {
   }
 };
 
+const makeSound = (key, start) => {
+  if (start) {
+    switch (key) {
+      case "w":
+        let tom1 = new Audio("./../asset/audio/sound-drum-kit/tom-1.mp3");
+        tom1.play();
+        tom1.volume = 0.5;
+        break;
+      case "a":
+        let tom2 = new Audio("./../asset/audio/sound-drum-kit/tom-2.mp3");
+        tom2.play();
+        tom2.volume = 0.5;
+        break;
+      case "d":
+        let tom3 = new Audio("./../asset/audio/sound-drum-kit/tom-3.mp3");
+        tom3.play();
+        tom3.volume = 0.5;
+        break;
+
+      case "i":
+        let crash = new Audio("./../asset/audio/sound-drum-kit/crash.mp3");
+        crash.play();
+        crash.volume = 0.5;
+        break;
+      case "j":
+        let snare = new Audio("./../asset/audio/sound-drum-kit/snare.mp3");
+        snare.play();
+        snare.volume = 0.5;
+        break;
+      case " ":
+        let kick = new Audio("./../asset/audio/sound-drum-kit/kick-bass.mp3");
+        kick.play();
+        kick.volume = 0.5;
+        break;
+
+      case "space":
+        let kickClick = new Audio(
+          "./../asset/audio/sound-drum-kit/kick-bass.mp3"
+        );
+        kickClick.play();
+        kickClick.volume = 0.5;
+        break;
+
+      default:
+        console.log(key);
+    }
+  }
+};
+
+function buttonAnimation(currentKey, start) {
+  if (start) {
+    if (currentKey == " ") {
+      let activeButton = document.querySelector(".space ");
+      activeButton.classList.add("pressed");
+      setTimeout(function () {
+        activeButton.classList.remove("pressed");
+      }, 300);
+    } else {
+      let activeButton = document.querySelector("." + currentKey);
+      activeButton.classList.add("pressed");
+      setTimeout(function () {
+        activeButton.classList.remove("pressed");
+      }, 300);
+    }
+  }
+}
+
 let btnAll = document.getElementsByClassName("key-btn");
 let btnTotal = btnAll.length;
 for (let btn = 0; btn < btnTotal; btn++) {
   btnAll[btn].addEventListener("click", function () {
     let btnPress = this.innerHTML;
-    console.log(btnPress);
-    makeSound(btnPress);
+    console.log(btnPress, start);
+    makeSound(btnPress, start);
   });
 }
-
 addEventListener("keydown", function (e) {
-  makeSound(e.key);
+  makeSound(e.key, start);
+  buttonAnimation(e.key, start);
   console.log(e);
 });
 
-function makeSound(key) {
-  switch (key) {
-    case "w":
-      let tom1 = new Audio("./../asset/audio/sound-drum-kit/tom-1.mp3");
-      tom1.play();
-      break;
-    case "a":
-      let tom2 = new Audio("./../asset/audio/sound-drum-kit/tom-2.mp3");
-      tom2.play();
-      break;
-    case "d":
-      let tom3 = new Audio("./../asset/audio/sound-drum-kit/tom-3.mp3");
-      tom3.play();
-      break;
+// document.querySelector(".logo").addEventListener("click", function () {
+//   start = true;
 
-    case "i":
-      let crash = new Audio("./../asset/audio/sound-drum-kit/crash.mp3");
-      crash.play();
-      break;
-    case "j":
-      let snare = new Audio("./../asset/audio/sound-drum-kit/snare.mp3");
-      snare.play();
-      break;
-    case " ":
-      let kick = new Audio("./../asset/audio/sound-drum-kit/kick-bass.mp3");
-      kick.play();
-      break;
-
-    default:
-      console.log(btnPress);
-  }
-}
+// });
