@@ -227,33 +227,33 @@ const makeSound = (key, start) => {
       case "w":
         let tom1 = new Audio("./../asset/audio/sound-drum-kit/tom-1.mp3");
         tom1.play();
-        tom1.volume = 0.5;
+        tom1.volume = 0.3;
         break;
       case "a":
         let tom2 = new Audio("./../asset/audio/sound-drum-kit/tom-2.mp3");
         tom2.play();
-        tom2.volume = 0.5;
+        tom2.volume = 0.3;
         break;
       case "d":
         let tom3 = new Audio("./../asset/audio/sound-drum-kit/tom-3.mp3");
         tom3.play();
-        tom3.volume = 0.5;
+        tom3.volume = 0.3;
         break;
 
       case "i":
         let crash = new Audio("./../asset/audio/sound-drum-kit/crash.mp3");
         crash.play();
-        crash.volume = 0.5;
+        crash.volume = 0.3;
         break;
       case "j":
         let snare = new Audio("./../asset/audio/sound-drum-kit/snare.mp3");
         snare.play();
-        snare.volume = 0.5;
+        snare.volume = 0.3;
         break;
       case " ":
         let kick = new Audio("./../asset/audio/sound-drum-kit/kick-bass.mp3");
         kick.play();
-        kick.volume = 0.5;
+        kick.volume = 0.3;
         break;
 
       case "space":
