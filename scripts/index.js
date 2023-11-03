@@ -16,12 +16,21 @@ let btnNight = document.querySelector("#container-night i");
 let containerDay = document.getElementById("container-day");
 let changes = false;
 let song = new Audio("./../asset/audio/agito-themes.mp3");
+let characterSide = document.getElementById("character-image");
 // status for local storage
 // let takeNight = false;
 
 // select input form atribut
 let inputForm = document.querySelectorAll(".input");
 let userInput = [];
+
+// my skill effect
+document
+  .getElementById("my-skills-content")
+  .addEventListener("mouseover", () => {
+    const corporateLaugh = new Audio("./../asset/audio/corporate-laugh.mp3");
+    corporateLaugh.play();
+  });
 
 // makes real time day counter
 const timeElapsed = Date.now();
@@ -65,6 +74,7 @@ punAtribut.addEventListener("click", () => {
 });
 
 document.getElementById("button-themes-day").addEventListener("click", () => {
+  characterSide.classList.remove("active-night");
   togleButtonDay();
   changes = false;
   changeThemes(changes);
@@ -72,12 +82,13 @@ document.getElementById("button-themes-day").addEventListener("click", () => {
 });
 
 document.getElementById("button-themes-night").addEventListener("click", () => {
+  characterSide.classList.add("active-night");
   togleButtonNight();
   changes = true;
   changeThemes(changes);
   backSong(changes);
   // takeNight = true;
-  // locaStorageStatus();
+  // locaStorageStatus(takeNight);
 });
 
 const checkedInput = () => {
@@ -194,9 +205,57 @@ const changeThemes = (hensin) => {
 const backSong = (hensin) => {
   if (hensin) {
     song.play();
-    song.volume = 1;
+    song.volume = 0.2;
   } else {
     song.pause();
     song.currentTime = 0;
   }
 };
+
+let btnAll = document.getElementsByClassName("key-btn");
+let btnTotal = btnAll.length;
+for (let btn = 0; btn < btnTotal; btn++) {
+  btnAll[btn].addEventListener("click", function () {
+    let btnPress = this.innerHTML;
+    console.log(btnPress);
+    makeSound(btnPress);
+  });
+}
+
+addEventListener("keydown", function (e) {
+  makeSound(e.key);
+  console.log(e);
+});
+
+function makeSound(key) {
+  switch (key) {
+    case "w":
+      let tom1 = new Audio("./../asset/audio/sound-drum-kit/tom-1.mp3");
+      tom1.play();
+      break;
+    case "a":
+      let tom2 = new Audio("./../asset/audio/sound-drum-kit/tom-2.mp3");
+      tom2.play();
+      break;
+    case "d":
+      let tom3 = new Audio("./../asset/audio/sound-drum-kit/tom-3.mp3");
+      tom3.play();
+      break;
+
+    case "i":
+      let crash = new Audio("./../asset/audio/sound-drum-kit/crash.mp3");
+      crash.play();
+      break;
+    case "j":
+      let snare = new Audio("./../asset/audio/sound-drum-kit/snare.mp3");
+      snare.play();
+      break;
+    case " ":
+      let kick = new Audio("./../asset/audio/sound-drum-kit/kick-bass.mp3");
+      kick.play();
+      break;
+
+    default:
+      console.log(btnPress);
+  }
+}

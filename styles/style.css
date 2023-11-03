@@ -578,15 +578,24 @@ main {
   /* padding: 20px; */
 }
 .image-dump h2 {
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-shadow: 2px 2px #000000;
+  /* text-decoration-color: #000000; */
 }
 .key-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-shadow: 2px 2px #000000;
 }
 
 #img-1 {
+  object-fit: contain;
+  object-position: 50% 50%;
+  background-image: url("./../asset/images/image-drum-kit/tom-1.jpeg");
   background-color: #646363;
   width: 150px;
   height: 100px;
@@ -596,6 +605,7 @@ main {
   /* margin-top: 20px; */
 }
 #img-2 {
+  background-image: url("./../asset/images/image-drum-kit/crash.jpeg");
   background-color: #646363;
   width: 150px;
   height: 200px;
@@ -604,6 +614,7 @@ main {
   align-self: self-start;
 }
 #img-3 {
+  background-image: url("./../asset/images/image-drum-kit/tom-2.jpeg");
   background-color: #646363;
   width: 150px;
   height: 170px;
@@ -612,6 +623,7 @@ main {
   align-self: center; */
 }
 #img-4 {
+  background-image: url("./../asset/images/image-drum-kit/tom-3.jpeg");
   background-color: #646363;
   width: 250px;
   height: 150px;
@@ -621,6 +633,7 @@ main {
   margin-bottom: 20px;
 }
 #img-5 {
+  background-image: url("./../asset/images/image-drum-kit/bass.jpeg");
   background-color: #646363;
   width: 250px;
   height: 100px;
@@ -629,6 +642,7 @@ main {
   align-self: self-end;
 }
 #img-6 {
+  background-image: url("./../asset/images/image-drum-kit/snare.jpeg");
   background-color: #646363;
   width: 150px;
   height: 100px;
@@ -638,10 +652,6 @@ main {
 }
 
 .animated-grid {
-  /* animation-name: grid-zoom-out; */
-
-  animation-duration: 5s;
-  animation-delay: 0.5s;
   /* animation-name: grid-zoom-in; */
 }
 .image-shake {
@@ -692,18 +702,9 @@ main {
 
 @keyframes grid-zoom-out {
   from {
-    width: 200px;
+    right: -400px;
   }
   to {
-    width: 100%;
-  }
-}
-
-@keyframes grid-zoom-in {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 200px;
+    right: 0px;
   }
 }
