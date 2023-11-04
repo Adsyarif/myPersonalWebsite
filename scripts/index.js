@@ -15,8 +15,8 @@ let btnDay = document.querySelector("#container-day i");
 let btnNight = document.querySelector("#container-night i");
 let containerDay = document.getElementById("container-day");
 let changes = false;
-let song = new Audio("./../asset/audio/agito-themes.mp3");
 let characterSide = document.getElementById("character-image");
+
 // status for local storage
 let takeNight = false;
 
@@ -81,22 +81,64 @@ punAtribut.addEventListener("click", () => {
 });
 
 document.getElementById("button-themes-day").addEventListener("click", () => {
-  characterSide.classList.remove("active-night");
+  // characterSide.classList.remove("active-night");
   togleButtonDay();
   changes = false;
   changeThemes(changes);
-  backSong(changes);
 });
 
 document.getElementById("button-themes-night").addEventListener("click", () => {
-  characterSide.classList.add("active-night");
+  // characterSide.classList.add("active-night");
   togleButtonNight();
+  takeNight = true;
   changes = true;
-  changeThemes(changes);
-  backSong(changes);
-  // takeNight = true;
-  // locaStorageStatus(takeNight);
 });
+
+document.getElementById("agito-song").addEventListener("click", () => {
+  characterSide.classList.add("active-agito");
+  changes = true;
+  changeThemes(takeNight);
+  backSong(changes);
+});
+
+// change icon
+const changeThemes = (nightTheme) => {
+  if (nightTheme) {
+    document
+      .querySelector("picture source")
+      .setAttribute(
+        "srcset",
+        "./asset/images/image-music/agito-logo-night.webp"
+      );
+    document
+      .querySelector(".default-img")
+      .setAttribute("src", "./asset/images/image-music/agito-logo-night.webp");
+  } else {
+    document
+      .querySelector("picture source")
+      .setAttribute("srcset", "./asset/images/icon-adrisa/logo-dark-sm.webp");
+    document
+      .querySelector(".default-img")
+      .setAttribute("src", "./asset/images/icon-adrisa/logo-light-sm.webp");
+  }
+};
+
+const selectSong = (artist) => {
+  let path = "./../asset/audio/" + artist + "-themes.mp3";
+  let song = new Audio(path);
+  song.play();
+  song.volume = 0.2;
+};
+
+const backSong = (hensin) => {
+  if (hensin) {
+    song.play();
+    song.volume = 0.2;
+  } else {
+    song.pause();
+    song.currentTime = 0;
+  }
+};
 
 const checkedInput = () => {
   if (inputForm.length == userInput.length) {
@@ -190,43 +232,12 @@ if (darkMode == "on") {
   takeNight = true;
   characterSide.classList.add("active-night");
   togleButtonNight();
-  changes = true;
-  changeThemes(changes);
-  backSong(changes);
 }
 if (takeNight) {
   locaStorage.setItem("darkMode", "on");
 } else {
   localStorage.setItem("darkMode", "off");
 }
-
-const changeThemes = (hensin) => {
-  if (hensin) {
-    document
-      .querySelector("picture source")
-      .setAttribute("srcset", "./asset/images/agito-logo-night.webp");
-    document
-      .querySelector(".default-img")
-      .setAttribute("src", "./asset/images/agito-logo-night.webp");
-  } else {
-    document
-      .querySelector("picture source")
-      .setAttribute("srcset", "./asset/images/icon-adrisa/logo-dark-sm.webp");
-    document
-      .querySelector(".default-img")
-      .setAttribute("src", "./asset/images/icon-adrisa/logo-light-sm.webp");
-  }
-};
-
-const backSong = (hensin) => {
-  if (hensin) {
-    song.play();
-    song.volume = 0.2;
-  } else {
-    song.pause();
-    song.currentTime = 0;
-  }
-};
 
 const makeSound = (key, start) => {
   if (start) {

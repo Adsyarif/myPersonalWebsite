@@ -437,9 +437,10 @@ textarea {
 .social-media-icon {
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
-.social-media {
+.card-md {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -448,7 +449,7 @@ textarea {
   flex-wrap: wrap;
 }
 
-.social-media figure {
+.card-md figure {
   display: flex;
   align-items: center;
   justify-content: center;
